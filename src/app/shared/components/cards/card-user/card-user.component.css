@@ -1,0 +1,42 @@
+.dy-card {
+    height: 180px;
+    max-width: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid rgb(14, 74, 202);
+    transition: 0.7s all ease-in-out;
+    margin: 1rem auto;
+}
+
+.dy-card > .dy-card__img {
+    height: 100px;
+    width: 100px;
+    /* margin-bottom: 00.5rem; */
+    padding: 0.5rem;
+}
+
+.dy-card__img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+}
+
+.dy-card > .dy-card__info {
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+}
+
+.dy-card > .dy-card__info > p {
+    opacity: 0.5;
+    margin: 0;
+}
+
+.dy-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}

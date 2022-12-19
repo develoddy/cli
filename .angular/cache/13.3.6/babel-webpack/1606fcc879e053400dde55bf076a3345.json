@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = function () {\n  return true;\n};\n/**\n * The reason this file exists is so that we can set a breakpoint via\n * script name, and then control when that breakpoint is set in\n * our library code by importing and calling this function. The\n * breakpoint will always be on line 2.\n */","map":null,"metadata":{},"sourceType":"script"}

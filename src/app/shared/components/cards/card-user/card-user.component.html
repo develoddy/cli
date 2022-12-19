@@ -1,0 +1,107 @@
+<!-- <div class="row">
+    <div class="col mb-3">
+        <p class="text-fz22 font-weight-bold ls-1 text-black">Amigos</p>
+    </div>
+</div>
+<div class="row">
+    <div *ngFor="let profile of profiles" class="col-12 col-lg-4 col-md-4">
+        <div class="company_profile_info">
+            <div class="company-up-info">
+                <img src="{{ url + 'users/get-image-user/' + profile.profile.image_header }}" width="100" height="100" alt="" />
+                <h3><a class="text-black" [routerLink]="['/profile', profile.id]">{{ profile.username }}</a></h3>
+
+                <ul>
+                    <li class="btn" *ngIf="following_arr.indexOf(profile.id) < 0 && profile.id === _identity.id">
+                        <div class="container-icon">
+                            <small class="text-secondary"> Es usted</small>
+                        </div>
+                    </li>
+                    <li class="btn" *ngIf="following_arr.indexOf(profile.id) < 0 && profile.id != _identity.id" (click)="followUser(profile.id)">
+                        <div class="container-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill text-success" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <small class="text-secondary"> Seguir</small>
+                        </div>
+                    </li>
+                    <li class="btn" *ngIf="following_arr.indexOf(profile.id) >= 0" (mouseenter)="mouseEnter(profile.id)" (mouseleave)="mouseleave(profile.id)" (click)="unfollowUser(profile.id)">
+                        <span *ngIf="profile.id === followUserOver; else following">
+                            <a title="Unfollowing" [class.bg-danger]="profile.id == followUserOver">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                                </svg>
+                                <small> Dejar de seguir</small>
+                            </a>
+                        </span>
+                        <ng-template #following>
+                            <div class="container-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-primary" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg>
+                                <small class="text-secondary"> Siguiendo</small>
+                            </div>
+                        </ng-template>
+                    </li>
+                </ul>
+            </div>
+            <a [routerLink]="['/profile', profile.id]" class="view-more-pro cursor text-uppercase">Ver perfil</a>
+        </div>
+    </div>
+</div> -->
+
+<!-- CARDS PHOTOS -->
+    <div class="row">
+        <!-- CONTAINER -->
+            <ng-container *ngFor="let item of profiles">
+                <!-- COLUMNA -->
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                        <div class="card custom-card pb-0">
+                            <div class="card-header"><img class="img-fluid" src="../assets/images/user-card/1.jpg" alt="" /></div>
+                            <div class="card-profile"><img class="rounded-circle" src="{{ url + 'users/get-image-user/' + item.profile.image_header }}" alt="" /></div>
+                            <ul class="card-social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                            <div class="text-center profile-details">
+                                <h5 [routerLink]="['/profile']">{{ item.username }}</h5>
+                                <h6>Manager</h6>
+                                <ul>
+                                    <li class="btn btn-primary" *ngIf="following_arr.indexOf(item.id) < 0 && item.id === _identity.id" style="margin-bottom: 30px;margin-top: 10px;">
+                                        <span> Es usted</span>
+                                    </li>
+                                    <li class="btn btn-outline-dark" *ngIf="following_arr.indexOf(item.id) < 0 && item.id != _identity.id" (click)="followUser(item.id)" style="margin-bottom: 30px;margin-top: 10px;">
+                                        <span> Seguir</span>
+                                    </li>
+                                    <li class="btn btn-outline-dark" *ngIf="following_arr.indexOf(item.id) >= 0" (mouseenter)="mouseEnter(item.id)" (mouseleave)="mouseleave(item.id)" (click)="unfollowUser(item.id)" style="margin-bottom: 30px;margin-top: 10px;">
+                                        <span *ngIf="item.id === followUserOver; else following">
+                                            <a title="Unfollowing" [class.bg-danger]="profile.id == followUserOver">       
+                                                <span>Dejar de seguir</span>
+                                            </a>
+                                        </span>
+                                        <ng-template #following>
+                                            <span> Siguiendo</span>
+                                        </ng-template>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer row">
+                                <div class="col-4 col-sm-4">
+                                    <h6>Follower</h6>
+                                    <h3 class="counter">9564</h3>
+                                </div>
+                                <div class="col-4 col-sm-4">
+                                    <h6>Following</h6>
+                                    <h3><span class="counter">49</span>K</h3>
+                                </div>
+                                <div class="col-4 col-sm-4">
+                                    <h6>Total Post</h6>
+                                    <h3><span class="counter">96</span>M</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </ng-container>
+    </div>

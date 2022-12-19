@@ -1,0 +1,102 @@
+<div class="page-body-wrapper">
+    <!-- SIDEBAR START -->
+        <div class="sidebar-wrapper">
+            <app-sidebar-page></app-sidebar-page>
+        </div>
+    <!-- / END SIDEBAR-->
+
+    <!-- BODY START -->
+        <div class="page-body">
+            <div class="container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Social App</h3>
+                        </div>
+                        <div class="col-6">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="feather feather-home"
+                                        >
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">Apps</li>
+                                <li class="breadcrumb-item active">Social App</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="user-profile social-app-profile">
+                    <!-- HEADER -->
+                        <div class="row">
+                            <!-- USER PROFILE START -->
+                                <div class="col-sm-12 box-col-12">
+                                    <div class="card hovercard text-center">
+                                        <div class="cardheader socialheader"></div>
+                                        <div class="user-image">
+                                            <div class="avatar"><img alt="" src="../assets/images/user/1.jpg" /></div>
+                                            <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5"></i></div>
+                                            <ul class="share-icons">
+                                                <li><a class="social-icon bg-primary" href="#"><i class="fa fa-smile-o"></i></a></li>
+                                                <li><a class="social-icon bg-secondary" href="#"><i class="fa fa-wechat"></i></a></li>
+                                                <li><a class="social-icon bg-warning" href="#"><i class="fa fa-share-alt"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="info market-tabs p-0">
+                                            <ul class="nav nav-tabs border-tab tabs-scoial" id="top-tab" role="tablist">
+                                                <li class="nav-item"><a class="nav-link" id="top-timeline" data-bs-toggle="tab" routerLink="social-app" role="tab" aria-controls="timeline" aria-selected="false">Timeline</a></li>
+                                                <li class="nav-item"><a class="nav-link" id="top-about" data-bs-toggle="tab" [routerLink]="['/social-app/about']" role="tab" aria-controls="about" aria-selected="false">About</a></li>
+                                                <li class="nav-item">
+                                                    <div class="user-designation"></div>
+                                                    <div class="title"><a target="_blank" href="">ElANA</a></div>
+                                                    <div class="desc mt-2">general manager</div>
+                                                </li>
+                                                <li class="nav-item"><a class="nav-link active" id="top-friends" data-bs-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="true">Friends</a></li>
+                                                <li class="nav-item"><a class="nav-link" id="top-photos" data-bs-toggle="tab" [routerLink]="['/social-app/photos']" role="tab" aria-controls="photos" aria-selected="false">Photos</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- / END USER PROFILE -->
+                        </div>
+
+                    <!-- CARD FRIENDS -->
+                        <div class="tab-content" id="top-tabContent">
+                            <div class="tab-pane fade active show" id="friends" role="tabpanel" aria-labelledby="friends">
+                                <!-- FRIENDS -->
+                                    <app-card-user *ngIf="resUserFollow" [_identity]="identity" [_data]="resUserFollow" (_followedId)="followUser($event)" (_unfollowedId)="unfollowUser($event)"></app-card-user>
+                                    <!-- <app-card-user *ngIf="resUserFollow" [_identity]="identity" [_data]="resUserFollow" (_followedId)="followUser($event)" (_unfollowedId)="unfollowUser($event)"></app-card-user> -->
+                                <!-- / END FRIENDS -->
+                            </div>
+                        </div>
+
+                    <!-- VER MÁS FRIENDS -->
+                        <div class="tab-content" id="top-tabContent">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item" *ngIf="page > 0"><a class="page-link" [routerLink]="['/social-app/friends', prev_page]">Previous</a></li>
+                                    <li class="page-item" *ngIf="pages != page"><a class="page-link" [routerLink]="['/social-app/friends', next_page]">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <!-- / END BODY -->
+</div>

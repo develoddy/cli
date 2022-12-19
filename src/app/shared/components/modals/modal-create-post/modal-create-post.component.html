@@ -1,0 +1,59 @@
+
+<link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)" />
+
+<!-- Modal -->
+<div class="modal fade modal-bookmark" id="exampleModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Crear publicación</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-bs-original-title="" title=""></button>
+          </div>
+          <div class="modal-body">
+              <form class="form-bookmark needs-validation" id="bookmark-form" novalidate="">
+              <!-- <form class="form-bookmark needs-validation" #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm.value)" novalidate> -->
+                  
+                  <!-- CARD -->
+                  <div class="card">
+                      <div class="card-body p-0">
+                          <div class="new-users-social">
+                              <div class="media">
+                                  <img class="rounded-circle image-radius m-r-15" src="assets/images/user/1.jpg" alt="">
+                                  <div class="media-body">
+                                      <h6 class="mb-0 f-w-900">Eddy Lujan 2</h6>
+                                      <p>Público </p>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+
+                          <!-- TIMELINE CONTENT -->
+                              <div class="timeline-content">
+
+                                  <!-- INPUT -->
+                                      <div class="comments-box">
+                                          <div class="media">
+                                              <!-- <img class="img-50 img-fluid m-r-20 rounded-circle" alt="" src="assets/images/user/1.jpg"> -->
+                                              <div class="media-body">
+                                                  <div class="input-group text-box"> 
+                                                      <!-- <input class="form-control input-txt-bx" type="text" name="content" #content="ngModel" [(ngModel)]="post.content" placeholder="Publica tu comentario"> -->
+                                                      <textarea name="message-to-send" id="message-to-send" cols="70" rows="3"></textarea>
+                                                      <div class="input-group-append"> 
+                                                          <button class="btn btn-transparent" type="button"><i class="fa fa-smile-o"> </i></button> 
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  <!-- / END INPUT -->
+                              </div>
+                      </div>
+                  </div>
+                  <!-- data-bs-dismiss="modal" data-bs-original-title="" -->
+                  <input id="index_var" type="hidden" value="5" data-bs-original-title="" title="" /> 
+                  <button class="btn btn-primary w-100" type="submit" title="">Publicar</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

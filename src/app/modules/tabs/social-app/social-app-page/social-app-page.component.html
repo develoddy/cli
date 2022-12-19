@@ -1,0 +1,699 @@
+<!-- <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)" /> -->
+
+<div class="page-body-wrapper">
+    <!-- PAGE SIDEBAR STARTS -->
+    <div class="sidebar-wrapper">
+        <app-sidebar-page></app-sidebar-page>
+    </div>
+    <!-- PAGE SIDEBAR ENDS -->
+
+    <!-- PAGE BODY -->
+    <div class="page-body">
+        <div class="container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-6"><h3>Social App</h3></div>
+                    <div class="col-6">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="feather feather-home"
+                                    >
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">Apps</li>
+                            <li class="breadcrumb-item active">Social App</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER FLUID STARTS -->
+        <div class="container-fluid">
+            <div class="user-profile social-app-profile">
+                <div class="row">
+                    <!-- USER PROFILE FIRST STYLE STARTS -->
+                    <div class="col-sm-12 box-col-12">
+                        <div class="card hovercard text-center">
+                            <div class="cardheader socialheader"></div>
+                            <div class="user-image">
+                                <div class="avatar"><img alt="" src="{{ url + 'users/get-image-user/' + this.identity.profile.image_header }}" /></div>
+                                <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5"></i></div>
+                                <ul class="share-icons">
+                                    <li>
+                                        <a class="social-icon bg-primary" href="#"><i class="fa fa-smile-o"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icon bg-secondary" href="#"><i class="fa fa-wechat"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="social-icon bg-warning" href="#"><i class="fa fa-share-alt"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="info market-tabs p-0">
+                                <ul class="nav nav-tabs border-tab tabs-scoial" id="top-tab" role="tablist">
+                                    <li class="nav-item"><a class="nav-link active font-weight-600" id="top-timeline" data-bs-toggle="tab" routerLink="social-app" role="tab" aria-controls="timeline" aria-selected="true">Timeline</a></li>
+                                    <li class="nav-item"><a class="nav-link font-weight-600" id="top-about" data-bs-toggle="tab" [routerLink]="['about']" role="tab" aria-controls="about" aria-selected="false">About</a></li>
+                                    <li class="nav-item">
+                                        <div class="user-designation"></div>
+                                        <div class="title"><a [routerLink]="['/profile']" class="letter-spacing-2 font-weight-700">{{ this.identity.username }}</a></div>
+                                        <div class="desc mt-2 letter-spacing-2">general manager</div>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link font-weight-600" id="top-friends" data-bs-toggle="tab" [routerLink]="['friends']" role="tab" aria-controls="friends" aria-selected="false">Friends</a></li>
+                                    <li class="nav-item"><a class="nav-link font-weight-600" id="top-photos" data-bs-toggle="tab" routerLink="photos" role="tab" aria-controls="photos" aria-selected="false">Photos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / END USER PROFILE FIRST STYLE STARTS -->
+                </div>
+                <div class="tab-content" id="top-tabContent">
+                    <div class="tab-pane fade show active" id="timeline" role="tabpanel" aria-labelledby="timeline">
+                        <div class="row">
+                            <!-- --------- COLUMNA LEFT START ----------- -->
+                            <div class="col-xl-3 xl-40 col-lg-12 col-md-5 box-col-4">
+                                <div class="default-according style-1 faq-accordion" id="accordionExample">
+                                    <!-- CARD -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-start ps-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    &nbsp; &nbsp;Mi Perfil
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="card-body socialprofile filter-cards-view">
+                                                <div class="media">
+                                                    <img class="img-50 img-fluid m-r-20 rounded-circle" src="{{ url + 'users/get-image-user/' + this.identity.profile.image_header }}" alt="" />
+                                                    <div class="media-body">
+                                                        <h6 class="font-primary f-w-600">{{ this.identity.username }}</h6>
+                                                        <span class="d-block">
+                                                            <span>
+                                                                <i class="fa fa-send-o"></i>
+                                                                <span class="px-2">
+                                                                    Mensajes
+                                                                    <span class="badge rounded-pill badge-light ms-2">9</span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="d-block">
+                                                            <span>
+                                                                <i class="fa fa-bell-o"> </i><span class="px-2">Notificaciones<span class="badge rounded-pill badge-light ms-2">9</span></span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="social-btngroup d-flex"><button class="btn btn-primary text-center" type="button">Likes</button> <button class="btn btn-light text-center ms-2" type="button">View</button></div>
+                                                <div class="likes-profile text-center">
+                                                    <h5>
+                                                        <span><i class="fa fa-heart font-danger"></i>&nbsp;884</span>
+                                                    </h5>
+                                                </div>
+                                                <div class="text-center">35 Me encata esta semana</div>
+                                                <div class="customers text-center social-group">
+                                                    <ul>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg" alt="" data-container="body" data-bs-toggle="tooltip" title="Johny Waston" /></li>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg" alt="" data-container="body" data-bs-toggle="tooltip" title="Andew Jon" /></li>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg" alt="" data-container="body" data-bs-toggle="tooltip" title="Comeren Diaz" /></li>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/2.png" alt="" data-container="body" data-bs-toggle="tooltip" title="Bucky Barnes" /></li>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/8.jpg" alt="" data-container="body" data-bs-toggle="tooltip" title="Jason Borne" /></li>
+                                                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/11.png" alt="" data-container="body" data-bs-toggle="tooltip" title="Comeren Diaz" /></li>
+                                                    </ul>
+                                                </div>
+                                                <img class="img-fluid mt-5" alt="" src="assets/images/social-app/timeline-3.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CARD -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-start collapsed ps-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                    &nbsp; &nbsp;Amigos en común
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="card-body social-status filter-cards-view">
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/2.png" alt="" />
+                                                    <div class="social-status social-online"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Bucky Barnes</span><span class="d-block">winter@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/10.jpg" alt="" />
+                                                    <div class="social-status social-busy"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Sarah Loren</span><span class="d-block">barnes@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/6.jpg" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Jason Borne</span><span class="d-block">jasonb@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/8.jpg" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Comeren Diaz</span><span class="d-block">comere@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/14.png" alt="" />
+                                                    <div class="social-status social-online"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Andew Jon</span><span class="d-block">andrewj@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/4.jpg" alt="" />
+                                                    <div class="social-status social-busy"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Johny Waston</span><span class="d-block">johny@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/3.png" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Johny William</span><span class="d-block">johnyw@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/2.png" alt="" />
+                                                    <div class="social-status social-online"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Bucky Barnes</span><span class="d-block">winter@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/10.jpg" alt="" />
+                                                    <div class="social-status social-busy"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Sarah Loren</span><span class="d-block">barnes@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/6.jpg" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Jason Borne</span><span class="d-block">jasonb@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/8.jpg" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Comeren Diaz</span><span class="d-block">comere@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/14.png" alt="" />
+                                                    <div class="social-status social-online"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Andew Jon</span><span class="d-block">andrewj@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/4.jpg" alt="" />
+                                                    <div class="social-status social-busy"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Johny Waston</span><span class="d-block">johny@gmail.com</span></div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/3.png" alt="" />
+                                                    <div class="social-status social-offline"></div>
+                                                    <div class="media-body"><span class="f-w-600 d-block">Johny William</span><span class="d-block">johnyw@gmail.com</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CARD -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button
+                                                    class="btn btn-link btn-block text-start collapsed ps-0 pe-0"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseThree"
+                                                >
+                                                    &nbsp; &nbsp;Activity Feed
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div class="collapse show" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="card-body social-status filter-cards-view">
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/10.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Andew Jon</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">20 min Ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/3.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Johny Waston</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">1 hour Ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/5.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Comeren Diaz</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">1 days Ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/4.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Sarah Loren</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">2 days Ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/3.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Johny Waston</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">5 days Ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <img class="img-50 rounded-circle m-r-15" src="assets/images/user/5.jpg" alt="" />
+                                                    <div class="media-body">
+                                                        <span class="f-w-600 d-block">Comeren Diaz</span>
+                                                        <p>Commented on Shaun Park's <a href="#">Photo</a></p>
+                                                        <span class="light-span">6 days Ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / END COLUMNA LEFT -->
+
+                            <!--  -->
+                            <!--  -->
+
+                            <!-- ----------- COLUMNA CENTER ----------- -->
+                            <div class="col-xl-6 xl-60 col-lg-12 col-md-7 box-col-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="f-w-700">Historias</h5>
+                                            </div>
+                                            <!-- Carousel -->
+                                            <div class="card-body">
+                                                <div class="owl-carousel owl-theme owl-loaded owl-drag" id="owl-carousel-1">
+                                                    <div class="owl-stage-outer">
+                                                        <div class="owl-stage" style="transform: translate3d(-4803px, 0px, 0px); transition: all 1.25s ease 0s; width: 7205px;">
+                                                            <!-- <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/6.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/7.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/8.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/9.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/10.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/11.jpg" alt="" /></div>
+                                                            </div> 
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/1.jpg" alt="" /></div>
+                                                            </div>-->
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/1.jpg" alt="" height="200" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/2.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/3.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/4.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/5.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/6.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/7.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/8.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/9.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <div class="owl-item active" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/10.jpg" alt="" height="200" /></div>
+                                                            </div>
+                                                            <!-- <div class="owl-item active" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/11.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned active" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/1.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned active" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/1.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned active" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/2.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/3.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/4.jpg" alt="" /></div>
+                                                            </div>
+                                                            <div class="owl-item cloned" style="width: 290.2px; margin-right: 10px;">
+                                                                <div class="item"><img src="../assets/images/slider/5.jpg" alt="" /></div>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="owl-nav disabled">
+                                                        <button type="button" role="presentation" class="owl-prev" data-bs-original-title="" title=""><span aria-label="Previous">‹</span></button>
+                                                        <button type="button" role="presentation" class="owl-next" data-bs-original-title="" title=""><span aria-label="Next">›</span></button>
+                                                    </div>
+                                                    <!-- <div class="owl-dots"> -->
+                                                        <!-- <button role="button" class="owl-dot" data-bs-original-title="" title=""><span></span></button> -->
+                                                        <!-- <button role="button" class="owl-dot" data-bs-original-title="" title=""><span></span></button> -->
+                                                        <!-- <button role="button" class="owl-dot active" data-bs-original-title="" title=""><span></span></button> -->
+                                                    <!-- </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12" *ngFor="let post of posts ; let l = count">
+                                        <!-- CARD -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="new-users-social">
+                                                    <div class="media">
+                                                        <img class="rounded-circle image-radius m-r-15" src="{{ url + 'users/get-image-user/' + post.user.profile.image_header }}" alt="" />
+                                                        <div class="media-body">
+                                                            <h6 class="mb-0 f-w-700 text-uppercase letter-spacing-2">{{ post.user.username }}</h6>
+                                                            <p>{{post.created_at }}</p>
+                                                        </div>
+                                                        <span class="pull-right mt-0">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                class="feather feather-more-vertical"
+                                                            >
+                                                                <circle cx="12" cy="12" r="1"></circle>
+                                                                <circle cx="12" cy="5" r="1"></circle>
+                                                                <circle cx="12" cy="19" r="1"></circle>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- IMAGE -->
+                                                <img class="img-fluid" alt="" src="{{ url + 'posts/get-image-post/' + post.images[0].title }}" />
+
+                                                <!-- TIMELINE CONTENT -->
+                                                <div class="timeline-content">
+                                                    <!-- CONTROL BUTTONS -->
+                                                    <div class="like-content mt-2">
+                                                        <span class="">
+                                                            <!-- <i class="fa fa-heart font-danger"></i> -->
+                                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16"> <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/> </svg> -->
+
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart-fill font-danger" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                                            </svg>
+                                                        </span>
+                                                        <span class="px-3">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                class="feather feather-message-circle"
+                                                            >
+                                                                <path
+                                                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                                                                ></path>
+                                                            </svg>
+                                                        </span>
+
+                                                        <span class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+                                                                />
+                                                            </svg>
+                                                        </span>
+
+                                                        <span class="pull-right comment-number">
+                                                            <!-- <span>20</span>
+                                                                                    <span><i class="fa fa-share me-0"></i></span> -->
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                                                                />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+
+                                                    <!-- class="font-weight-700 text-black text-uppercase letter-spacing-2 text-small" -->
+                                                    <p class="text-black font-weight-700">100 Me gusta</p>
+
+                                                    <!-- CONTENT -->
+                                                    <p><b class="font-weight-700 txt-dark">{{post.user.username}}</b> {{ post.content }}</p>
+
+                                                    <!-- COMMENTS -->
+                                                    <div class="social-chat">
+                                                        <div class="your-msg" *ngFor="let comment of post.comments; let i = index; count as total">
+                                                            <div class="media">
+                                                                <img class="img-50 img-fluid m-r-20 rounded-circle" alt="" src="{{ url + 'users/get-image-user/' + comment.user.profile.image_header }}" />
+                                                                <div class="media-body">
+                                                                    <span class="f-w-600">
+                                                                        {{ comment.user.username }} <span>1 Year Ago <i class="fa fa-reply font-primary"></i></span>
+                                                                    </span>
+                                                                    <p>{{ comment.content }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- BUTTOM -->
+                                                        <div class="text-center text-secondary">
+                                                            <!-- <p class="text-uppercase letter-spacing-2 text-small">Más comentarios</p> -->
+                                                            <a href="#" class="text-uppercase letter-spacing-2 text-small">Más comentarios</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- / END COMMENTS -->
+
+                                                    <!-- INPUT -->
+                                                    <div class="comments-box">
+                                                        <div class="media">
+                                                            <img class="img-50 img-fluid m-r-20 rounded-circle" alt="" src="{{ url + 'users/get-image-user/' + this.identity.profile.image_header }}" />
+                                                            <div class="media-body">
+                                                                <div class="input-group text-box">
+                                                                    <input class="form-control input-txt-bx" type="text" name="message-to-send" placeholder="Publica tu comentario" />
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-transparent" type="button"><i class="fa fa-smile-o"> </i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- / END INPUT -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- VER MÄS -->
+                                    <div class="col-sm-12 text-center">
+                                        <button class="btn btn-primary text-center text-uppercase letter-spacing-2" (click)="viewMore()" *ngIf="!noMore">Más publicaciones</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / END CONLUMNA CENTER -->
+
+                            <!--  -->
+                            <!--  -->
+
+                            <!-- ----------- COLUMNA RIGHT ----------- -->
+                            <div class="col-xl-3 xl-100 box-col-12">
+                                <div class="default-according style-1 faq-accordion job-accordion" id="accordionoc1">
+                                    <div class="row">
+                                        <!-- PROFILE INTRO STARTS -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link ps-0" data-bs-toggle="collapse" data-bs-target="#collapseicon2" aria-expanded="true" aria-controls="collapseicon2">&nbsp; &nbsp;Profile Intro</button>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse show" id="collapseicon2" aria-labelledby="collapseicon2" data-bs-parent="#accordion">
+                                                    <div class="card-body filter-cards-view">
+                                                        <span class="f-w-600 mb-2 d-block">About Me :</span>
+                                                        <p>Hi, I’m elana, I’m 30 and I work as a web Designer for the “Daydreams” Agency in Pier 56.</p>
+                                                        <span class="f-w-600 mb-2 d-block">Favourite TV shows :</span>
+                                                        <p>Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy.</p>
+                                                        <span class="f-w-600 mb-2 d-block">Favourite Music Bands :</span>
+                                                        <p>Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy.</p>
+                                                        <div class="social-network theme-form">
+                                                            <span class="f-w-600">Social Networks</span>
+                                                            <button class="btn social-btn btn-fb mb-2 text-center"><i class="fa fa-facebook m-r-5"></i>Facebook</button>
+                                                            <button class="btn social-btn btn-twitter mb-2 text-center"><i class="fa fa-twitter m-r-5"></i>Twitter</button>
+                                                            <button class="btn social-btn btn-linkedin text-center"><i class="fa fa-linkedin m-r-5"></i>Linkedin</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / END PROFILE INTRO STARTS -->
+
+                                        <!-- FOLLOWERS -->
+                                        <!-- "Seguidores" son los usuarios que te siguen. -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link ps-0" data-bs-toggle="collapse" data-bs-target="#collapseicon3" aria-expanded="true" aria-controls="collapseicon3">&nbsp; &nbsp;Followers</button>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse show" id="collapseicon3" aria-labelledby="collapseicon3" data-bs-parent="#accordion">
+                                                    <div class="card-body social-list filter-cards-view">
+                                                        <div class="media" *ngFor="let items of followers; let l = count">
+                                                            <img class="img-50 img-fluid m-r-20 rounded-circle" src="{{ url + 'users/get-image-user/' + items.profile.image_header }}" alt="" />
+                                                            <div class="media-body">
+                                                                <span class="d-block">{{ items. name }}</span>
+                                                                <a href="#">Add Friend</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="social-btngroup d-flex">
+                                                            <button [routerLink]="['photos']" class="btn btn-light text-center ms-2" type="button">Ver más</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- FOLLOWINGS -->
+                                        <!-- “Siguiendo” es el término para los usuarios a los que sigues -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link ps-0" data-bs-toggle="collapse" data-bs-target="#collapseicon10" aria-expanded="true" aria-controls="collapseicon10">&nbsp; &nbsp;Followings</button>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse show" id="collapseicon10" aria-labelledby="collapseicon10" data-bs-parent="#accordion">
+                                                    <div class="card-body social-list filter-cards-view">
+                                                        <div class="media" *ngFor="let items of followings; let l = count">
+                                                            <img class="img-50 img-fluid m-r-20 rounded-circle" src="{{ url + 'users/get-image-user/' + items.profile.image_header }}" alt="" />
+                                                            <div class="media-body">
+                                                                <span class="d-block">{{ items. name }}</span>
+                                                                <a href="#">Add Friend</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="social-btngroup d-flex">
+                                                            <button [routerLink]="['photos']" class="btn btn-light text-center ms-2" type="button">Ver más</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- LATEST PHOTOS -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link ps-0" data-bs-toggle="collapse" data-bs-target="#collapseicon4" aria-expanded="true" aria-controls="collapseicon4">&nbsp; &nbsp;Latest Photos</button>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse show" id="collapseicon4" data-bs-parent="#accordion" aria-labelledby="collapseicon4">
+                                                    <div class="card-body photos filter-cards-view px-0">
+                                                        <ul class="text-left px-4">
+                                                            <li *ngFor="let image of images">
+                                                                <div class="latest-post">
+                                                                    <img class="img-fluid" alt="" src="{{ url + 'posts/get-image-post/' + image.title }}" />
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="social-btngroup d-flex px-3 mb-3">
+                                                            <button [routerLink]="['photos']" class="btn btn-light text-center ms-2" type="button">Ver más</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- FRIENDS -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link ps-0" data-bs-toggle="collapse" data-bs-target="#collapseicon13" aria-expanded="true" aria-controls="collapseicon13">&nbsp; &nbsp;Friends</button>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse show" id="collapseicon13" data-bs-parent="#accordion" aria-labelledby="collapseicon13">
+                                                    <div class="card-body avatar-showcase filter-cards-view">
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/3.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/5.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/1.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/2.png" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/3.png" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/6.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/10.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/14.png" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/1.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/4.jpg" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/11.png" alt="#" /></div>
+                                                        <div class="d-inline-block friend-pic"><img class="img-50 rounded-circle" src="assets/images/user/8.jpg" alt="#" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / END FRIENDS  -->
+                                        <div class="col-xl-12 xl-50 box-col-6">
+                                            <div class="card"><img class="img-fluid" src="assets/images/social-app/timeline-4.png" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / END COLUMNA RIGHT -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / END CONTAINER FLUID -->
+    </div>
+    <!-- / END PAGE BODY -->
+</div>

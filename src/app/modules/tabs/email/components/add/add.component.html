@@ -1,0 +1,97 @@
+<div class="card email-body">
+    <div class="row">
+        <div class="col-xl-4 col-md-12 box-md-12 pr-0">
+            <div class="pe-0 b-r-light"></div>
+            <div class="email-top">
+                <div class="row">
+                    <div class="col">
+                        <h5>Inbox</h5>
+                    </div>
+                    <div class="col text-end">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">More</button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inbox">
+                <div class="media" *ngFor="let data of user">
+                    <div class="media-size-email">
+                        <img class="me-3 rounded-circle" src="{{ url + 'users/get-image-user/' + data.user.profile.image_header }}" width="50" height="50" alt="" />
+                    </div>
+                    <div class="media-body">
+                        <h6>
+                            {{ data.user.name }} <small><span>(15</span> July <span>2018)</span></small>
+                        </h6>
+                        <p>Mattis luctus. Donec nisi diam text.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-xl-8 col-md-12 box-md-12 pl-0">
+            <div class="email-right-aside">
+                <div class="email-body radius-left">
+                    <div class="ps-0">
+                        <div class="tab-content">
+                            <div class="" id="pills-darkhome" role="tabpanel" aria-labelledby="pills-darkhome-tab">
+                                <div class="email-compose">
+                                    <div class="email-top compose-border">
+                                        <div class="row">
+                                            <div class="col-sm-8 xl-50">
+                                                <h4 class="mb-0">Mensaje nuevo</h4>
+                                            </div>
+                                            <!-- <div class="col-sm-4 btn-middle xl-50">
+                                                <button class="btn btn-primary btn-block btn-mail text-center mb-0 mt-0 w-100" type="submit"><i class="fa fa-paper-plane me-2"></i> Enviar</button>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="email-wrapper">
+                                        <!-- <form class="theme-form"> -->
+                                        <form class="theme-form" #formAdd="ngForm" (ngSubmit)="onSubmit(formAdd)">
+                                            <div class="mb-3">
+                                                <label class="col-form-label pt-0" for="exampleInputEmail1">Para</label>
+                                                <select *ngIf="follows" name="user_id" #user_id="ngModel" [(ngModel)]="message.userId" class="form-control">
+                                                    <option *ngFor="let follow of follows" value="{{follow.user_id}}"> 
+                                                        {{follow.user.name}} 
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1">Asunto</label>
+                                                <input class="form-control" id="exampleInputPassword1" type="text" />
+                                            </div>
+                                            <div>
+                                                <label class="text-muted">Mensaje</label>
+                                                <!-- <textarea name="text" id="text-box" #content="ngModel" [(ngModel)]="message.content" cols="10" rows="2" required> </textarea> -->
+
+                                                <textarea name="text" #content="ngModel" [(ngModel)]="message.content" class="form-control" cols="30" rows="3" required></textarea>
+                                            </div>
+                                            <!-- <div class="mb-3 col-sm-4 btn-middle xl-50">
+                                                <button class="btn btn-primary btn-block btn-mail text-center mb-0 mt-0 w-100" type="submit"><i class="fa fa-paper-plane me-2"></i> Enviar</button>
+                                            </div> -->
+
+                                            <div class="col-sm-4 btn-middle xl-50 mt-2">
+                                                <button class="btn btn-primary btn-block btn-mail text-center mb-0 mt-0 w-100" type="submit">
+                                                    <i class="fa fa-paper-plane me-2"></i> Enviar
+                                                </button>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+  
+                            <!-- CONTENT EMAIL -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,81 @@
+<div class="card email-body">
+    <div class="row">
+        
+        <div class="col-xl-12 col-md-12 box-md-12 pr-0">
+            <div class="email-right-aside">
+                <div class="email-body radius-left">
+                    <div class="ps-0">
+                        <div class="tab-content">
+                            
+                            <!-- CONTENT POST -->
+                            <div class="tab-pane fade active show" id="pills-darkprofile" role="tabpanel" aria-labelledby="pills-darkprofile-tab">
+                                <div class="email-content" >
+                                    <div class="email-top">
+                                        <div class="row">
+                                            <!-- <div class="col-md-12 xl-100 col-sm-12"> -->
+                                            <div class="col-xl-6 col-md-6 xl-50">
+                                                <div class="media">
+                                                    <img class="me-3 rounded-circle" src="../../../../../assets/images/user/user.png" alt="">
+                                                    <!-- <img class="me-3 rounded-circle" src="{{ url + 'users/get-image-user/' + data.user.profile.image_header }}" width="50" height="50"  alt="" /> -->
+                                                    <div class="media-body">
+                                                        <h6>
+                                                            Eddylujan <small><span>(20</span> January) <span>6:00</span> AM</small>
+                                                        </h6>
+                                                        <div class="col text-left mt-1">
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Público</button>
+                                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item" href="#">Público</a><a class="dropdown-item" href="#">Amigos</a><a class="dropdown-item" href="#">Solo yo</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="email-wrapper">
+                                        <!-- FORM -->
+                                            <form #newPubForm="ngForm" class="theme-form" (ngSubmit)="onSubmit(newPubForm.value)" novalidate>
+                                                <div>
+                                                    <label class="text-muted"></label>
+                                                    <!-- <input type="text" name="content" #content="ngModel" [(ngModel)]="post.content"> -->
+
+                                                    <!-- <textarea  id="text-box" name="content" #content="ngModel" [(ngModel)]="post.content"  cols="10" rows="2"></textarea> -->
+
+                                                    <textarea id="text-box" name="text-box" #content="ngModel" [(ngModel)]="post.content" cols="10" rows="2">                                            </textarea>
+                                                </div>
+                                                <br>
+                                                <hr />
+                                                <div class="d-inline-block">
+                                                    <h6 class="text-muted"><i class="icofont icofont-clip"></i> ATTACHMENTS</h6>
+                                                    <a class="text-muted text-end right-download" href="#"><i class="fa fa-long-arrow-down me-2"></i>Download All</a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="attachment">
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item"><img class="img-fluid" src="../assets/images/email/1.jpg" alt="" /></li>
+                                                        <li class="list-inline-item"><img class="img-fluid" src="../assets/images/email/2.jpg" alt="" /></li>
+                                                        <li class="list-inline-item"><img class="img-fluid" src="../assets/images/email/3.jpg" alt="" /></li>
+                                                    </ul>
+                                                </div>
+                                                <hr />
+                                                <div class="action-wrapper">
+                                                    <div class="col-sm-12 btn-middle xl-50">
+                                                        <button class="btn btn-primary btn-block btn-mail text-center mb-0 mt-0 w-100" type="submit" [disabled]="newPubForm.invalid">
+                                                            <i class="fa fa-paper-plane me-2"></i> Publicar
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        <!-- / END FORM -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

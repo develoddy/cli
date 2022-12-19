@@ -1,0 +1,6 @@
+.dev-skeleton-content {
+    min-height: calc(100vh - 1px - 60px);
+    /* background: #fafafa; */
+    /* background: rgba(151, 154, 157, 0.5); */
+    /* background-color: transparent; */
+}
